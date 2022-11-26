@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="cpp">
+    <meta>
+        <name>C++</name>
+        <type>compiled</type>
+        <preferred-file-extension>cc</preferred-file-extension>
+    </meta>
+
+    <detectors>
+        <extension priority="1.0">cc,cpp,cxx,c++,C,hxx,hh,hpp,ixx,cppm</extension>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <match-content>^\s*namespace\b</match-content>
+        </combo>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <match-content>^\s*#include\s\s*\&lt;[a-z]+&gt;</match-content>
+        </combo>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <match-content>^\s*#import\b</match-content>
+        </combo>
+    </detectors>
+
+    <indentation>
+        <increase>
+            <expression>\{</expression>
+        </increase>
+        <decrease>
+            <expression>\}</expression>
+        </decrease>
+    </indentation>
+
+    <comments>
+        <single>
+            <expression>//</expression>
+        </single>
+        <multiline>
+            <starts-with>
+                <expression>/*</expression>
+            </starts-with>
+            <ends-with>
+                <expression>*/</expression>
+            </ends-with>
+        </multiline>
+    </comments>
+
+    <injection>
+        <expression>^(cpp)$</expression>
+    </injection>
+
+    <tree-sitter language="cpp">
+        <highlights path="cpp-highlights.scm" />
+        <folds path="cpp-folds.scm" />
+    </tree-sitter>
+</syntax>

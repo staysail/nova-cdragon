@@ -1,0 +1,167 @@
+{
+  "identifier": "tech.staysail.ClangD",
+  "name": "C-Dragon",
+  "organization": "Staysail Systems",
+  "description": "C and C++ support",
+  "version": "0.9.5",
+  "categories": ["languages", "formatters", "completions", "issues"],
+  "license": "MIT",
+  "repository": "https://github.com/staysail/nova-clangd",
+  "bugs": "https://github.com/staysail/nova-cland/issues",
+  "funding": "https://github.com/sponsors/gdamore",
+  "min_runtime": "10.0",
+
+  "main": "main.js",
+
+  "entitlements": {
+    "process": true,
+    "filesystem": "readwrite",
+    "requests": true
+  },
+
+  "commands": {
+    "editor": [
+      {
+        "title": "Jump To Definition",
+        "command": "tech.staysail.cdragon.jumpToDefinition",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      {
+        "title": "Jump To Declaration",
+        "command": "tech.staysail.cdragon.jumpToDeclaration",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      {
+        "title": "Jump To Type Definition",
+        "command": "tech.staysail.cdragon.jumpToTypeDefinition",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      {
+        "title": "Jump To Implementation",
+        "command": "tech.staysail.cdragon.jumpToImplementation",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      { "separator": true },
+      {
+        "title": "Format File",
+        "command": "tech.staysail.cdragon.formatFile",
+        "shortcut": "opt-shift-f",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      {
+        "title": "Rename Symbol",
+        "command": "tech.staysail.cdragon.renameSymbol",
+        "filters": {
+          "syntaxes": ["c", "cpp"]
+        }
+      },
+      {
+        "title": "Preferences",
+        "command": "tech.staysail.cdragon.preferences",
+        "syntaxes": ["c", "cpp"]
+      }
+    ],
+    "extensions": [
+      {
+        "title": "Preferences",
+        "command": "tech.staysail.cdragon.extensionPreferences"
+      },
+      {
+        "title": "Check for Newer ClangD",
+        "command": "tech.staysail.cdragon.checkForUpdate"
+      },
+      {
+        "title": "Restart Server",
+        "command": "tech.staysail.cdragon.restart",
+        "syntaxes": ["c", "cpp"]
+      }
+    ]
+  },
+
+  "config": [
+    {
+      "title": "Language Server",
+      "type": "section",
+      "children": [
+        {
+          "key": "tech.staysail.cdragon.lsp.flavor",
+          "title": "Language server to use",
+          "description": "Which language server to use",
+          "type": "enum",
+          "values": [
+            ["apple", "Apple CLangD"],
+            ["auto", "LLVM ClangD"],
+            ["clangd", "Custom CLangD"],
+            ["ccls", "CCLS"],
+            ["none", "None"]
+          ],
+          "radio": false,
+          "default": "apple"
+        },
+        {
+          "key": "tech.staysail.cdragon.lsp.path",
+          "title": "Language server Path",
+          "description": "Path to the language server",
+          "type": "path",
+          "placeholder": "/usr/bin/clangd"
+        },
+        {
+          "key": "tech.staysail.cdragon.compileCommandsDir",
+          "title": "Path to compile-commands.json directory",
+          "type": "path",
+          "allowFolders": true,
+          "allowFiles": false,
+          "placeholder": "Project Folder"
+        }
+      ]
+    },
+    {
+      "title": "Formatting",
+      "type": "section",
+      "children": [
+        {
+          "key": "tech.staysail.cdragon.format.onSave",
+          "title": "Format on save",
+          "description": "Format C and C++ files automatically when saving.",
+          "type": "boolean",
+          "default": false
+        }
+      ]
+    }
+  ],
+
+  "configWorkspace": [
+    {
+      "key": "tech.staysail.cdragon.compileCommandsDir",
+      "title": "Directory containing compile-commands.json",
+      "type": "path",
+      "allowFolders": true,
+      "allowFiles": false,
+      "placeholder": "Global Default"
+    },
+    {
+      "key": "tech.staysail.cdragon.format.onSave",
+      "title": "Format on save",
+      "description": "Format C and C++ files automatically when saving.",
+      "type": "enum",
+      "values": [
+        [null, "Inherit from Global Settings"],
+        [false, "Disable"],
+        [true, "Enable"]
+      ],
+      "default": null
+    }
+  ],
+
+  "activationEvents": ["onLanguage:c", "onLanguage:cpp"]
+}
