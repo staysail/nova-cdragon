@@ -1,6 +1,6 @@
 [submodule "C-Dragon.novaextension/tree-sitter-c"]
-	path = C-Dragon.novaextension/tree-sitter-c
+	path = tree-sitter-c
 	url = https://github.com/tree-sitter/tree-sitter-c
 [submodule "C-Dragon.novaextension/tree-sitter-cpp"]
-	path = C-Dragon.novaextension/tree-sitter-cpp
+	path = tree-sitter-cpp
 	url = https://github.com/tree-sitter/tree-sitter-cpp

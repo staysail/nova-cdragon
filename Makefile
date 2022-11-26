@@ -1,14 +1,14 @@
 ##
-## Makefile for Nova ClangD extension.
+## Makefile for Nova C-Dragon extension.
 ## This builds the tree-sitter dynamic libraries for C and C++.
 ##
 
-EXT_DIR		= ClangD.novaextension
+EXT_DIR		= C-Dragon.novaextension
 SYNTAX_DIR	= $(EXT_DIR)/Syntaxes
 APPBUNDLE	= /Applications/Nova.app
 FRAMEWORKS	= "${APPBUNDLE}/Contents/Frameworks/"
 CODESIGN	= codesign
-CP			= cp
+CP		= cp
 
 C_SRC_DIR	= tree-sitter-c/src
 C_OBJS		= c_parser.o
