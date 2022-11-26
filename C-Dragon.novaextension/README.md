@@ -10,7 +10,7 @@ _C-Dragon_ provides rich support for C and C++ development in Nova.
 > capabilities we have provided go beyond _clangd_ and as we also now support _ccls_,
 > we have changed the name of this extension to avoid possible confusion.
 
-It is forked from, and originally based upon
+It is originally based upon
 [Ben Beshara][1]'s original [C++ ClangD extension][2],
 but has been extended significantly beyond Ben's original work.
 
