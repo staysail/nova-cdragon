@@ -1,3 +1,12 @@
+## Version 0.9.6
+
+Refactoring. This utilizes the work we did for **D-Velop** to try to
+facilitate further development of this Extension.
+
+This also was a "break" in the Git History, as we are are now so different
+from Ben Beshara's original clangd extension that it felt improper to continue
+to list that as an "upstream".
+
 ## Version 0.9.5
 
 Initial swag at symbols for C syntax.

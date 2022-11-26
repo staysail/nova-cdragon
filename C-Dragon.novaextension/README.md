@@ -2,149 +2,125 @@
 
 ---
 
-_C-Dragon_ provides rich support for C and C++ development in Nova.
+**C-Dragon** provides rich support for C and C++ development in Nova via
+a language server like _clangd_, and fast syntactic analysis thanks to [Tree-sitter][3].
 
 > This extension is a _BETA_ release.
 
-> _NOTE_: An earlier version of this was named _ClangD_, but as the
-> capabilities we have provided go beyond _clangd_ and as we also now support _ccls_,
-> we have changed the name of this extension to avoid possible confusion.
+If you have installed our [C][4] extension, this extension is a complete
+superset and you can use this instead.
 
-It is originally based upon
-[Ben Beshara][1]'s original [C++ ClangD extension][2],
-but has been extended significantly beyond Ben's original work.
+## ✨ Features ✨
 
-## Feature Status
+- C
+- C++
+- Syntax Highlighting
+- Indentation (automatic, somewhat limited)
+- Symbols (C only, C++ coming soon)
+- Code Folding
+- Format File (per `.clang-format`), including On Save
+- Navigation, Jump to...
+  - Definition
+  - Declaration
+  - Implementation
+  - Type Definition
+- Hover Tooltips
+- Signature Assistance
+- Code Quality Hints
+- Code Actions
+- Rename Symbol
 
-| Status | Feature                         | Notes                                                     |
-| ------ | ------------------------------- | --------------------------------------------------------- |
-| ✅     | C Support                       |                                                           |
-| ✅     | C++ Support                     |                                                           |
-| ✅     | Highlighting                    | Uses Tree-sitter (fast!)                                  |
-| ✅     | Code Folding                    | Collapse functions, classes, structs, blocks, etc.        |
-| ✅     | Jump to Definition              |                                                           |
-| ✅     | Jump to Declaration             |                                                           |
-| ✅     | Jump to Implementation          |                                                           |
-| ✅     | Jump to Type Definition         | (Requires current _clangd_ or _ccls_.)                    |
-| ✅     | Hover                           | Relevant documentation when you hover over a symbol.      |
-| ✅     | Signature Assistance            | Get parameter hints as you type.                          |
-| ✅     | Diagnostic Assistance           | Report issues, and in some cases suggestsions, with code. |
-| ✅     | Formatting                      | Respects `.clang-format`                                  |
-| ✅     | Format on Save                  |                                                           |
-| ⛔️    | Format Selection                | Coming soon. (Really we need a Nova fix though.)          |
-| ⛔️    | Format Configuration            | (Supported via `.clang-format`)                           |
-| ☑️     | Code Actions                    | Suggested fix. Limited at present.                        |
-| ☑️     | Rename Symbol                   | Various caveats.                                          |
-| ⛔️    | Find References                 | Coming soon.                                              |
-| ⛔️    | Inlay Hints                     | Nova does not support.                                    |
-| ✅     | Language Server Restart         | Via extension menu.                                       |
-| ⛔️    | Language Server Diagnostic Info | Coming soon.                                              |
-| ⛔️    | Clang-Tidy Support              | Richer advice, only via _clangd_                          |
-| ☑️     | Internationalization            | Support for multiple languages (needs localizations)      |
-| ⛔️    | → French                        |                                                           |
-| ⛔️    | → German                        |                                                           |
-| ⛔️    | → Chinese                       |                                                           |
-| ⛔️    | → Japanese                      |                                                           |
-| ✅     | `clangd` Support                |                                                           |
-| ✅     | `ccls` Support                  |                                                           |
-| ✅     | Update `clangd`                 | Checks for latest version and downloads from github.      |
+## 📸 Screenshots 📸
 
-_Legend:_
-✅ Implemented, and works well.
-☑️ Partial implementation.
-⛔️ Not implemented
+## ⚙️ Language Server Integration ⚙️
 
-## Details
+**C-Dragon** requires a language server, either _clangd_ or _ccls_, for full functionality.
+TBD. Add these.
 
-Syntax support is provided via the official [Tree-sitter][3] grammars for C and C++, along
-with queries we have supplied for this extension. These provide for syntax highlighting
-and folding. This highlighting should be both richer, and faster, than previous alternatives.
-It does require Nova version 10 or newer though.
+By default, it will offer to download and use a current version of _clangd_
+from the official GitHub releases for that project. (The binary it downloads
+will be stored in the extension private directory.) It will also check
+for a newer version when you first start the editor. Additionally you can
+check for a newer version manually by using the **Extensions → C-Dragon → Check for Update**
+menu selection.
 
-Some limited assistance for automatic indentation of blocks is provided
-for as well.
+You may elect instead to use the bundled Apple _clangd_, or an installation of
+either _clangd_ or _ccls_ installed elsewhere. See the the Extension Preferences
+for details.
 
-Formatting will respect the `.clang-format` in your
-project directory if it is present.
+Note that some features may not work completely with older releases of _clangd_ or
+_ccls_, and that the Apple version of _clangd_ typically trails a bit behind the
+LLVM version.
 
-If you have installed our [C][4] extension, you can uninstall it, as this module
-provides a superset of that functionality.
+You may also disable the use of a language server entirely. This may be helpful
+for some very large projects that are too big for _clangd_ to index quickly.
+Of course, this will result in reduced functionality.
 
-You can also uninstall any other C or C++ language server or syntax plugins,
-as this should be a functional superset of all of them.
+Note that use of _ccls_ can be challenging, and we do not recommend it unless
+you are already familiar with it.
 
-## Permissions
+### Configuration of _clangd_
 
-This extension requires read/write access to the filesystem and to access the networks.
-This facility is used to optionally download a local copy of _clangd_ for use by the
-extension. This extension does not directly modify any files outside of it's own
-directory. Changes to the file made by formatting are done within the editor, and
-do not directly touch the filesystem (and also won't be written to disk until you
-save those files.) If you are concerned about security, you are welcome to review
-the source code, and build the extension for yourself.
+Configuration of _clangd_ is almost entirely via the `.clangd` file, as it does
+not offer the language server protocol methods for configuration (at least as of
+version 15.0.3.). Please see the `clangd` site for configuration guidance.
 
-## Requirements
+### Format Control
 
-> **TIP**: Apple supplies _clangd_ with the Xcode developer tools. That's all you need.
-> For that use case, this should Just Work<sup>&trade;</sup>, with no extra configuration
-> required.
+Likewise, formatting is controlled via a `.clang-format` file. The details of this
+are available on the clang site. (Formatting on save is disabled by default.)
 
-### Xcode (Apple) ClangD
-
-This extension works well with the out of the box Apple version of _clangd_.
-You should install a Xcode via the App Store, as that also includes headers
-and other features useful for software development on a mac.
-
-Note that Apple's edition of _clangd_ tends to lag upstream somewhat, and so
-some features may not work or may not work as well as with a more current version.
-
-### LLVM ClangD
-
-To use the newest version of _clangd_, you can use this extension's support
-for downloading and updating the newest version from GitHub.
-
-This can be done from the **Extensions → C-Dragon → Check for Newer ClangD** menu item.
-**C-Dragon** will check to see if a newer version than what is present is available
-from the official _clangd_ releases page.
-
-The downloaded _clangd_ is kept in the extension private directory, and will not
-affect any other installation of it, including the default one supplied by Apple.
-
-### Custom ClangD
-
-If you have another installation of _clangd_, you can use it by choosing this
-option and setting the path to in the extension preferences.
-No automatic checks or downloads will be performed in that case.
-
-### CCLS
-
-If you have a working installation of _ccls_ you can select it here.
-Installation and configuration of _ccls_ is an advanced topic,
-and it may require extra effort to get it to work.
-
-## Usage
+### Compile Commands
 
 The extension will start when editing a C or C++ source file. In order to provide project-context specific information, your project will need to provide a `compile_commands.json` file.
 Tools like CMake, meson-build, and similar can generate one for you. More information can be found at https://clang.llvm.org/docs/JSONCompilationDatabase.html
 
 The directory where your `compile_commands.json` file is stored can be specified in global or project preferences, if it is not in the root of the project directory. (Note that _clangd_ will also search in a top-level directory called `build`, but _ccls_ will not.)
 
-## Configuration
+## 🛡️ Security Considerations 🛡️
 
-To configure global preferences, open **Extensions → Extension Library...** then select C-Dragon's **Preferences** tab.
+You may notice that this extension needs entitlements to access
+the network and to read and write local files. These are used
+solely to support updating the language server. No files outside
+of the extension's private area are accessed directly, and the
+only requests made are read-only unauthenticated requests to access
+the public release information and actually download the binary
+needed for _clangd_.
 
-You can configure preferences on a per-project basis in **Project → Project Settings...**
+If you are concerned, you may download and configure your own
+copy of _clangd_, or use the Apple version, and disable the automatic downloads.
+This will prevent both direct access to the network by this extension,
+as well as direct filesystem access. Note however that _clangd_
+may itself perform those activities.
 
-For convenience, access to configuration is also available via the **C-Dragon** menu item in the
-editor's right click menu (when working on a C or C++ file).
+You can also disable the use of a language server altogether.
+
+## 🔮 Future Directions 🔮
+
+We plan to improve symbolication, including adding it for C++.
+
+Find References will help to find call sites of functions, or uses of variables.
+
+Further integration of Clang-Tidy support might be nice.
+
+We would like to see richer configuration support, but this is contingent upon
+`clangd` providing for it.
+
+We are contemplating adding Objective C and Objective C++ support.
+
+We would like to add localizations, but we don't know any other languages confidently enough to provide them ourselves. (See below for more information.)
+
+Tighter integration with build tools (like CMake or Meson) is something we plan to add.
+
+Debugging adapters for lldb or gdb is hoped for as well.
 
 ## Other Recommended Extensions
 
 It is recommended to enable support for one of CMake, Meson, or Makefile parsing,
-assuming your project uses one of these to drive it's build.
+assuming your project uses one of these to build.
 Staysail has published extensions for the former two.
 
-## Bugs
+## 🐜 Bugs 🐜
 
 - Symbol renames won't work if the selection starts in columns 0 or 1, or is located
   on the first two lines of the file. This is a [defect][6] in Nova.
@@ -158,12 +134,21 @@ Staysail has published extensions for the former two.
 - Symbol renames can mess up highlighting. Make a subsequent change to refresh the
   tree-sitter grammar's view of things. This appears to be a Nova defect.
 - _clangd_ (and probably _ccls_) has various limitations around symbol renaming. YMMV.
+
 - Some things that should be code actions are not.
 
-## Localizations
+## 🌐 Localizations 🌐
 
 If you'd like to help with localizing this extension, please submit an issue or
-contact us directly.
+contact us directly. We have designed the extension to make this a very easy task
+for anyone able to perform the actual translations.
+
+## ⚖️ Legal Notices ⚖️
+
+C-Dragon&trade; is a trademark of Staysail Systems, Inc.
+
+This work is based in part upon
+[Ben Beshara][1]'s original [C++ ClangD extension][2].
 
 [1]: https://benbeshara.id.au/ "Ben Beshara"
 [2]: https://example.com/clangd-nova-extension

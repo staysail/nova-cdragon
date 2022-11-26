@@ -3,11 +3,11 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C and C++ support",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "categories": ["languages", "formatters", "completions", "issues"],
   "license": "MIT",
-  "repository": "https://github.com/staysail/nova-clangd",
-  "bugs": "https://github.com/staysail/nova-cland/issues",
+  "repository": "https://github.com/staysail/nova-cdragon",
+  "bugs": "https://github.com/staysail/nova-cdragon/issues",
   "funding": "https://github.com/sponsors/gdamore",
   "min_runtime": "10.0",
 
@@ -23,28 +23,28 @@
     "editor": [
       {
         "title": "Jump To Definition",
-        "command": "tech.staysail.cdragon.jumpToDefinition",
+        "command": "cdragon.jumpToDefinition",
         "filters": {
           "syntaxes": ["c", "cpp"]
         }
       },
       {
         "title": "Jump To Declaration",
-        "command": "tech.staysail.cdragon.jumpToDeclaration",
+        "command": "cdragon.jumpToDeclaration",
         "filters": {
           "syntaxes": ["c", "cpp"]
         }
       },
       {
         "title": "Jump To Type Definition",
-        "command": "tech.staysail.cdragon.jumpToTypeDefinition",
+        "command": "cdragon.jumpToTypeDefinition",
         "filters": {
           "syntaxes": ["c", "cpp"]
         }
       },
       {
         "title": "Jump To Implementation",
-        "command": "tech.staysail.cdragon.jumpToImplementation",
+        "command": "cdragon.jumpToImplementation",
         "filters": {
           "syntaxes": ["c", "cpp"]
         }
@@ -52,7 +52,7 @@
       { "separator": true },
       {
         "title": "Format File",
-        "command": "tech.staysail.cdragon.formatFile",
+        "command": "cdragon.formatFile",
         "shortcut": "opt-shift-f",
         "filters": {
           "syntaxes": ["c", "cpp"]
@@ -60,29 +60,29 @@
       },
       {
         "title": "Rename Symbol",
-        "command": "tech.staysail.cdragon.renameSymbol",
+        "command": "cdragon.renameSymbol",
         "filters": {
           "syntaxes": ["c", "cpp"]
         }
       },
       {
         "title": "Preferences",
-        "command": "tech.staysail.cdragon.preferences",
+        "command": "cdragon.preferences",
         "syntaxes": ["c", "cpp"]
       }
     ],
     "extensions": [
       {
-        "title": "Preferences",
-        "command": "tech.staysail.cdragon.extensionPreferences"
+        "title": "Extension Preferences",
+        "command": "cdragon.extensionPreferences"
       },
       {
         "title": "Check for Newer ClangD",
-        "command": "tech.staysail.cdragon.checkForUpdate"
+        "command": "cdragon.checkForUpdate"
       },
       {
         "title": "Restart Server",
-        "command": "tech.staysail.cdragon.restart",
+        "command": "cdragon.restartServer",
         "syntaxes": ["c", "cpp"]
       }
     ]
@@ -94,31 +94,39 @@
       "type": "section",
       "children": [
         {
-          "key": "tech.staysail.cdragon.lsp.flavor",
+          "key": "cdragon.lsp.flavor",
           "title": "Language server to use",
           "description": "Which language server to use",
           "type": "enum",
           "values": [
-            ["apple", "Apple CLangD"],
-            ["auto", "LLVM ClangD"],
-            ["clangd", "Custom CLangD"],
+            ["auto", "LLVM clangd"],
+            ["apple", "Apple clangd"],
+            ["clangd", "Custom clangd"],
             ["ccls", "CCLS"],
             ["none", "None"]
           ],
           "radio": false,
-          "default": "apple"
+          "default": "auto"
         },
         {
-          "key": "tech.staysail.cdragon.lsp.path",
+          "key": "cdragon.checkForUpdates",
+          "title": "Check for Updates at Start",
+          "description": "When starting up, should we check to see if a new update of clangd is available? (Only when using LLVM clangd.)",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "key": "cdragon.lsp.path",
           "title": "Language server Path",
-          "description": "Path to the language server",
+          "description": "Path to a custom instance of clangd or ccls",
           "type": "path",
-          "placeholder": "/usr/bin/clangd"
+          "placeholder": "/usr/local/bin/clangd"
         },
         {
-          "key": "tech.staysail.cdragon.compileCommandsDir",
+          "key": "cdragon.compileCommandsDir",
           "title": "Path to compile-commands.json directory",
           "type": "path",
+          "relative": true,
           "allowFolders": true,
           "allowFiles": false,
           "placeholder": "Project Folder"
@@ -130,7 +138,7 @@
       "type": "section",
       "children": [
         {
-          "key": "tech.staysail.cdragon.format.onSave",
+          "key": "cdragon.format.onSave",
           "title": "Format on save",
           "description": "Format C and C++ files automatically when saving.",
           "type": "boolean",
@@ -142,15 +150,16 @@
 
   "configWorkspace": [
     {
-      "key": "tech.staysail.cdragon.compileCommandsDir",
+      "key": "cdragon.compileCommandsDir",
       "title": "Directory containing compile-commands.json",
       "type": "path",
+      "relative": true,
       "allowFolders": true,
       "allowFiles": false,
       "placeholder": "Global Default"
     },
     {
-      "key": "tech.staysail.cdragon.format.onSave",
+      "key": "cdragon.format.onSave",
       "title": "Format on save",
       "description": "Format C and C++ files automatically when saving.",
       "type": "enum",
