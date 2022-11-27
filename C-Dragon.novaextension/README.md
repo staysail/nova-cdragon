@@ -42,7 +42,6 @@ superset and you can use this instead.
 ## ⚙️ Language Server Integration ⚙️
 
 **C-Dragon** requires a language server, either _clangd_ or _ccls_, for full functionality.
-TBD. Add these.
 
 By default, it will offer to download and use a current version of _clangd_
 from the official GitHub releases for that project. (The binary it downloads
