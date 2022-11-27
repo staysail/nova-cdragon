@@ -57,7 +57,7 @@ for details.
 
 Note that some features may not work completely with older releases of _clangd_ or
 _ccls_, and that the Apple version of _clangd_ typically trails a bit behind the
-LLVM version.
+LLVM version. Also, _ccls_ doesn't understand Objective-C at all.
 
 You may also disable the use of a language server entirely. This may be helpful
 for some very large projects that are too big for _clangd_ to index quickly.
@@ -143,6 +143,20 @@ Staysail has published extensions for the former two.
 - _clangd_ (and probably _ccls_) has various limitations around symbol renaming. YMMV.
 
 - Some things that should be code actions are not.
+
+- Objective C++ support is quite primitive, and doesn't understand C++ yet.
+  We need a decent Tree-sitter grammar for it.
+
+- Objective C preprocessor statements are not well highlighted, as well as things
+  inside such conditionals. This is due to the limitations of the Tree-sitter grammar we have
+  used; we'll probably need to fork that grammar to fix it.
+
+- Pointer declarations are not properly symbolicated. This is because of limitations in the
+  Tree-sitter grammar. We will probably need to fork the grammars to make pointer_declarations
+  a hidden node.
+
+- Objective C symbolication is far from complete. We welcome bug reports and PRs from
+  folks who make use of Objective C.
 
 ## 🌐 Localizations 🌐
 

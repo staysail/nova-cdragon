@@ -58,3 +58,15 @@
 ((preproc_def name: (identifier) @name) @subtree (#set! role constant))
 ((preproc_function_def name: (identifier) @name) @subtree (#set! role function))
 
+((class_interface name: (identifier) @name) @subtree (#set! role class))
+((class_implementation name: (identifier) @name) @subtree (#set! role class))
+
+((synthesize_property property: (identifier) @name) @subtree (#set! role property))
+((property_declaration declarator: (identifier) @name) @subtree (#set! role property))
+
+((class_forward_declaration name: (identifier) @name) @subtree (#set! role class))
+
+; ((declaration declarator: (identifier) @name) @subtree (#set! role variable))
+
+((method_definition selector: (identifier) @name) @subtree (#set! role method))
+

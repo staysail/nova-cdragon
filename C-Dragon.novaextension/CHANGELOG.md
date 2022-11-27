@@ -1,3 +1,8 @@
+## Version 0.9.8
+
+Initial support for Objective-C, including limited support for
+Objective-C++ (which is treated as Objective-C for now).
+
 ## Version 0.9.7
 
 Some improvements to highlighting for both C and C++, making

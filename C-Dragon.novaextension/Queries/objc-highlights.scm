@@ -80,6 +80,8 @@
 "_Atomic"
 "in"
 "@synthesize"
+"__attribute__"
+"__attribute"
 ] @keyword.modifier
 
 [
@@ -97,7 +99,6 @@
 "typeof"
 "__typeof"
 "__typeof__"
-"__attribute__"
 "__builtin_available"
 "@available"
 "__GENERICS"
