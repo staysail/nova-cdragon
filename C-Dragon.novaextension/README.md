@@ -32,6 +32,11 @@ superset and you can use this instead.
 
 ## 📸 Screenshots 📸
 
+![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot1.png)
+![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot2.png)
+![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot3.png)
+![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot4.png)
+
 ## ⚙️ Language Server Integration ⚙️
 
 **C-Dragon** requires a language server, either _clangd_ or _ccls_, for full functionality.
