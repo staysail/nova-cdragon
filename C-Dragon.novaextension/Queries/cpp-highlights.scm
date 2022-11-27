@@ -4,6 +4,7 @@
 "case" @keyword.condition
 "catch" @keyword.condition
 "class" @keyword.construct
+"typename" @keyword.construct
 "concept" @keyword
 "const" @keyword.modifier
 "continue" @keyword.condition
@@ -38,6 +39,7 @@
 
 "typedef" @keyword
 "union" @keyword.construct
+"using" @keyword
 "volatile" @keyword.modifier
 "while" @keyword.condition
 
@@ -127,9 +129,16 @@
   function: (field_expression
 	field: (field_identifier) @identifier.function))
 (function_declarator
-  declarator: (identifier) @function)
+  declarator: (identifier) @identifier.function)
+(function_declarator
+  declarator: (qualified_identifier name: (identifier) @identifier.method))
+(function_declarator
+  declarator: (qualified_identifier scope: (_) @identifier.type.class))
+(function_declarator
+  declarator: (field_identifier) @identifier.method)
 (preproc_function_def
   name: (identifier) @function.special)
+(qualified_identifier scope: (namespace_identifier) @identifier.type.package)
 
 (field_identifier) @identifier.property
 (primitive_type) @keyword.construct

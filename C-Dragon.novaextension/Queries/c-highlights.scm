@@ -65,7 +65,7 @@
   function: (field_expression
 	field: (field_identifier) @identifier.function))
 (function_declarator
-  declarator: (identifier) @function)
+  declarator: (identifier) @identifier.function)
 (preproc_function_def
   name: (identifier) @function.special)
 

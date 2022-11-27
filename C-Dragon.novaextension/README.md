@@ -16,7 +16,7 @@ superset and you can use this instead.
 - C++
 - Syntax Highlighting
 - Indentation (automatic, somewhat limited)
-- Symbols (C only, C++ coming soon)
+- Symbols
 - Code Folding
 - Format File (per `.clang-format`), including On Save
 - Navigation, Jump to...

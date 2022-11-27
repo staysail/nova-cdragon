@@ -1,10 +1,22 @@
+## Version 0.9.7
+
+Some improvements to highlighting for both C and C++, making
+better attempts at labeling function identifiers and certain C++ keywords.
+
+Initial version of Symbolication for C++. Note that we don't use C++ really,
+so these results are mostly a result of exploring the syntax with
+the Syntax Inspector looking at CCLS sources (because that's what we had handy.)
+Consequently they're likely not perfect.
+
+Bug reports and/or pull requests are welcome!
+
 ## Version 0.9.6
 
 Refactoring. This utilizes the work we did for **D-Velop** to try to
 facilitate further development of this Extension.
 
 This also was a "break" in the Git History, as we are are now so different
-from Ben Beshara's original clangd extension that it felt improper to continue
+from Ben Beshara's original _clangd_ extension that it felt improper to continue
 to list that as an "upstream".
 
 ## Version 0.9.5

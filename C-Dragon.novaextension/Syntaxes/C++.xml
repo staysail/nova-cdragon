@@ -52,5 +52,6 @@
     <tree-sitter language="cpp">
         <highlights path="cpp-highlights.scm" />
         <folds path="cpp-folds.scm" />
+        <symbols path="cpp-symbols.scm" />
     </tree-sitter>
 </syntax>
