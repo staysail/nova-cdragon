@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="objc">
+    <meta>
+        <name>Objective-C</name>
+        <type>compiled</type>
+        <preferred-file-extension>m</preferred-file-extension>
+    </meta>
+
+    <detectors>
+        <!-- we don't support objective c++ fully, but this is better than nothing -->
+        <extension priority="0.5">mm,xm</extension>
+
+        <!-- these are the objective-c file types -->
+        <extension priority="1.0">m,x</extension>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <match-content>^\s*@interface\b</match-content>
+        </combo>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <!-- objective-c uses import declarations with a .h at the end -->
+            <match-content>^\s*#import\s+\&lt;[a-z]+\.h&gt;</match-content>
+        </combo>
+        <combo priority="0.7">
+            <extension>h</extension>
+            <!-- objective-c uses import declarations with a .h at the end -->
+            <match-content>^\s*#import\s+"[a-z]+\.h"</match-content>
+        </combo>
+    </detectors>
+
+    <indentation>
+        <increase>
+            <expression>\{</expression>
+        </increase>
+        <decrease>
+            <expression>\}</expression>
+        </decrease>
+    </indentation>
+
+    <comments>
+        <single>
+            <expression>//</expression>
+        </single>
+        <multiline>
+            <starts-with>
+                <expression>/*</expression>
+            </starts-with>
+            <ends-with>
+                <expression>*/</expression>
+            </ends-with>
+        </multiline>
+    </comments>
+
+    <injection>
+        <expression>^(objc)$</expression>
+    </injection>
+
+    <tree-sitter language="objc">
+        <highlights path="objc-highlights.scm" />
+        <folds path="objc-folds.scm" />
+        <symbols path="objc-symbols.scm" />
+    </tree-sitter>
+</syntax>

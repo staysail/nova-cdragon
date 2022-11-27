@@ -121,7 +121,7 @@ async function startClient() {
   };
   var clientOptions = {
     // The set of document syntaxes for which the server is valid
-    syntaxes: ["c", "cpp"],
+    syntaxes: ["c", "cpp", "objc"],
   };
 
   lspClient = new LanguageClient(

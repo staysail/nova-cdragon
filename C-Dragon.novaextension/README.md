@@ -1,9 +1,10 @@
-# C-Dragon - C/C++ Extension
+# C-Dragon - C, C++, and Objective-C Extension
 
 ---
 
-**C-Dragon** provides rich support for C and C++ development in Nova via
+**C-Dragon** provides rich support for C, C++, and Objective-C development in Nova via
 a language server like _clangd_, and fast syntactic analysis thanks to [Tree-sitter][3].
+(Some limited support for Objective-C++ is also present.)
 
 > This extension is a _BETA_ release.
 
@@ -14,6 +15,7 @@ superset and you can use this instead.
 
 - C
 - C++
+- Objective-C
 - Syntax Highlighting
 - Indentation (automatic, somewhat limited)
 - Symbols
@@ -111,7 +113,7 @@ Further integration of Clang-Tidy support might be nice.
 We would like to see richer configuration support, but this is contingent upon
 `clangd` providing for it.
 
-We are contemplating adding Objective C and Objective C++ support.
+Objective C++ support could probably be improved, but we need a good Tree-sitter grammar for it.
 
 We would like to add localizations, but we don't know any other languages confidently enough to provide them ourselves. (See below for more information.)
 

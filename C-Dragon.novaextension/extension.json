@@ -2,8 +2,8 @@
   "identifier": "tech.staysail.ClangD",
   "name": "C-Dragon",
   "organization": "Staysail Systems",
-  "description": "C and C++ support",
-  "version": "0.9.7",
+  "description": "C, C++, and Objective-C support",
+  "version": "0.9.8",
   "categories": ["languages", "formatters", "completions", "issues"],
   "license": "MIT",
   "repository": "https://github.com/staysail/nova-cdragon",
@@ -25,28 +25,28 @@
         "title": "Jump To Definition",
         "command": "cdragon.jumpToDefinition",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       {
         "title": "Jump To Declaration",
         "command": "cdragon.jumpToDeclaration",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       {
         "title": "Jump To Type Definition",
         "command": "cdragon.jumpToTypeDefinition",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       {
         "title": "Jump To Implementation",
         "command": "cdragon.jumpToImplementation",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       { "separator": true },
@@ -55,20 +55,20 @@
         "command": "cdragon.formatFile",
         "shortcut": "opt-shift-f",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       {
         "title": "Rename Symbol",
         "command": "cdragon.renameSymbol",
         "filters": {
-          "syntaxes": ["c", "cpp"]
+          "syntaxes": ["c", "cpp", "objc"]
         }
       },
       {
         "title": "Preferences",
         "command": "cdragon.preferences",
-        "syntaxes": ["c", "cpp"]
+        "syntaxes": ["c", "cpp", "objc"]
       }
     ],
     "extensions": [
@@ -83,7 +83,7 @@
       {
         "title": "Restart Server",
         "command": "cdragon.restartServer",
-        "syntaxes": ["c", "cpp"]
+        "syntaxes": ["c", "cpp", "objc"]
       }
     ]
   },
@@ -161,7 +161,7 @@
     {
       "key": "cdragon.format.onSave",
       "title": "Format on save",
-      "description": "Format C and C++ files automatically when saving.",
+      "description": "Format source files automatically when saving.",
       "type": "enum",
       "values": [
         [null, "Inherit from Global Settings"],
@@ -172,5 +172,5 @@
     }
   ],
 
-  "activationEvents": ["onLanguage:c", "onLanguage:cpp"]
+  "activationEvents": ["onLanguage:c", "onLanguage:cpp", "onLanguage:objc"]
 }

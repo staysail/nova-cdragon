@@ -8,7 +8,7 @@ SYNTAX_DIR	= $(EXT_DIR)/Syntaxes
 APPBUNDLE	= /Applications/Nova.app
 FRAMEWORKS	= "${APPBUNDLE}/Contents/Frameworks/"
 CODESIGN	= codesign
-CP		= cp
+CP			= cp
 
 C_SRC_DIR	= tree-sitter-c/src
 C_OBJS		= c_parser.o
@@ -20,6 +20,11 @@ CPP_OBJS	= cpp_parser.o cpp_scanner.o
 CPP_LIBNAME	= libtree-sitter-cpp.dylib
 CPP_DYLIB	= $(SYNTAX_DIR)/$(CPP_LIBNAME)
 
+OBJC_SRC_DIR	= tree-sitter-objc/src
+OBJC_OBJS	= objc_parser.o
+OBJC_LIBNAME	= libtree-sitter-objc.dylib
+OBJC_DYLIB	= $(SYNTAX_DIR)/$(OBJC_LIBNAME)
+
 OSXFLAGS = -arch arm64 -arch x86_64 -mmacosx-version-min=11.6
 
 CFLAGS = -O3 -Wall -Wextra -Wno-unused -Wno-unused-parameter -fPIC
@@ -29,7 +34,7 @@ LDFLAGS=-F${FRAMEWORKS} -framework SyntaxKit -rpath @loader_path/../Frameworks
 LINKSHARED := $(LINKSHARED)-dynamiclib -Wl,
 LINKSHARED := $(LINKSHARED)-install_name,/lib/$(LIBNAME),-rpath,@executable_path/../Frameworks
 
-all: $(C_DYLIB) $(CPP_DYLIB)
+all: $(C_DYLIB) $(CPP_DYLIB) $(OBJC_DYLIB)
 
 c_%.o: $(C_SRC_DIR)/%.c
 	$(CC) $(OSXFLAGS) $(CFLAGS) -I $(C_SRC_DIR) -c -o $@ $<
@@ -40,12 +45,20 @@ cpp_%.o: $(CPP_SRC_DIR)/%.c
 cpp_%.o: $(CPP_SRC_DIR)/%.cc
 	$(CXX) $(OSXFLAGS) $(CXXFLAGS) -I $(CPP_SRC_DIR) -c -o $@ $<
 
+objc_%.o: $(OBJC_SRC_DIR)/%.c
+	$(CC) $(OSXFLAGS) $(CFLAGS) -I $(OBJC_SRC_DIR) -c -o $@ $<
+
+
 $(C_DYLIB): $(C_OBJS)
 	$(CC) $(OSXFLAGS) -I $(C_SRC_DIR) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -o $@
 	$(CODESIGN) -s - $@
 
 $(CPP_DYLIB): $(CPP_OBJS)
 	$(CXX) $(OSXFLAGS) -I $(CPP_SRC_DIR) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -lc++ -o $@
+	$(CODESIGN) -s - $@
+
+$(OBJC_DYLIB): $(OBJC_OBJS)
+	$(CC) $(OSXFLAGS) -I $(OBJC_SRC_DIR) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -o $@
 	$(CODESIGN) -s - $@
 
 clean:
