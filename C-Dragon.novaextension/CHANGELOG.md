@@ -1,3 +1,7 @@
+## Version 0.9.9
+
+Bug fix (prepRename not forwarding the error properly).
+
 ## Version 0.9.8
 
 Initial support for Objective-C, including limited support for

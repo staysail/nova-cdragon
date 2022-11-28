@@ -3,7 +3,7 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "categories": ["languages", "formatters", "completions", "issues"],
   "license": "MIT",
   "repository": "https://github.com/staysail/nova-cdragon",
