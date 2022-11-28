@@ -38,10 +38,16 @@ async function renameSym(editor) {
       return;
     }
   } else {
-    const prepResult = await Lsp.sendRequest("textDocument/prepareRename", {
-      textDocument: { uri: editor.document.uri },
-      position: selectedPos,
-    });
+    let prepResult = null;
+    try {
+      prepResult = await Lsp.sendRequest("textDocument/prepareRename", {
+        textDocument: { uri: editor.document.uri },
+        position: selectedPos,
+      });
+    } catch (err) {
+      Messages.showError(err);
+      return;
+    }
     if (prepResult == null) {
       Messages.showError(Catalog.msgSelectionNotRenameable);
       return;

@@ -185,7 +185,7 @@ async function sendRequest(method, params) {
     Messages.showError(Catalog.msgNoLspClient);
     return null;
   } else {
-    return lspClient.sendRequest(method, params);
+    return await lspClient.sendRequest(method, params);
   }
 }
 
