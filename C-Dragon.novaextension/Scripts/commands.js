@@ -18,6 +18,8 @@ const keys = {
   formatFile: "cdragon.formatFile",
   checkForUpdate: "cdragon.checkForUpdate",
   renameSymbol: "cdragon.renameSymbol",
+  findReferences: "cdragon.findReferences",
+  showReferences: "cdragon.showReferences",
 };
 
 module.exports = keys;

@@ -49,6 +49,14 @@
           "syntaxes": ["c", "cpp", "objc"]
         }
       },
+      {
+        "title": "Find References",
+        "command": "cdragon.findReferences",
+        "filters": {
+          "syntaxes": ["c", "cpp", "objc"]
+        }
+      },
+
       { "separator": true },
       {
         "title": "Format File",
@@ -169,6 +177,23 @@
         [true, "Enable"]
       ],
       "default": null
+    }
+  ],
+
+  "sidebars": [
+    {
+      "id": "cdragon.sidebar",
+      "name": "C-Dragon",
+      "smallImage": "sbsmall",
+      "largeImage": "sblarge",
+      "sections": [
+        {
+          "id": "cdragon.sidebar.references",
+          "name": "References",
+          "placeholderText": "Results from \"Find References\" appear here.",
+          "placeholderImage": "sblarge"
+        }
+      ]
     }
   ],
 

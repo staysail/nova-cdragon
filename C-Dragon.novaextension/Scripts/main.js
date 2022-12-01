@@ -8,6 +8,7 @@ const Prefs = require("./prefs.js");
 const Lsp = require("./lsp.js");
 const Format = require("./format.js");
 const Navigate = require("./navigate.js");
+const References = require("./references.js");
 const Rename = require("./rename.js");
 const Update = require("./update.js");
 const State = require("./state.js");
@@ -16,6 +17,7 @@ exports.activate = async function () {
   Prefs.register();
   Format.register();
   Navigate.register();
+  References.register();
   Rename.register();
   Lsp.register();
   Update.register();

@@ -120,4 +120,4 @@ function register() {
   );
 }
 
-module.exports = { register: register };
+module.exports = { register: register, showLocation: showLocation };

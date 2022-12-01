@@ -103,10 +103,6 @@ You can also disable the use of a language server altogether.
 
 ## 🔮 Future Directions 🔮
 
-We plan to improve symbolication, including adding it for C++.
-
-Find References will help to find call sites of functions, or uses of variables.
-
 Further integration of Clang-Tidy support might be nice.
 
 We would like to see richer configuration support, but this is contingent upon

@@ -37,6 +37,8 @@ const catalog = {
   msgDownloadFailed: "msgDownloadFailed",
   msgLspIsNotAutoTitle: "msgLspIsNotAutoTitle",
   msgLspIsNotAutoBody: "msgLspIsNotAutoBody",
+  msgReferencesFoundTitle: "msgReferencesFoundTitle",
+  msgReferencesFoundBody: "msgReferencesFoundBody",
 };
 
 // default English strings
@@ -74,6 +76,9 @@ values[catalog.msgLspIsNotAutoTitle] = "Language server not updateable";
 values[catalog.msgLspIsNotAutoBody] =
   "Automatic updates are only supported when using LLVM clangd.";
 values[catalog.msgDownloadFailed] = "Download of asset failed.";
+values[catalog.msgReferencesFoundTitle] = "Found _COUNT_ References";
+values[catalog.msgReferencesFoundBody] =
+  "Select the C-Dragon sidebar to see the results.";
 
 // verify that every entry in the catalog has a matching entry in values
 for (let name in catalog) {
