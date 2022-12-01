@@ -1,3 +1,10 @@
+# Version 0.9.10
+
+Find References is now a supported menu option.
+This populates a new side bar.
+
+Workaround for rename in the first two columns.
+
 ## Version 0.9.9
 
 Bug fix (prepRename not forwarding the error properly).

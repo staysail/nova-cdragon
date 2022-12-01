@@ -124,14 +124,12 @@ Staysail has published extensions for the former two.
 
 ## 🐜 Bugs 🐜
 
-- Symbol renames won't work if the selection starts in columns 0 or 1, or is located
-  on the first two lines of the file. This is a [defect][6] in Nova.
+- Symbol renames won't work if the selection starts in columns 0 or 1 and is less than
+  three characters long, or is located on the first two lines of the file.
+  This is a [defect][6] in Nova.
   It will result in a message similar to:
 
   > `failed to decode textDocument/prepareRename request: expected integer`
-
-  To workaround this, try just clicking (not selecting) a position within the symbol,
-  but in in columns 3 or higher, then rename (the command palette may be easier to use).
 
 - Symbol renames can mess up highlighting. Make a subsequent change to refresh the
   tree-sitter grammar's view of things. This appears to be a Nova defect.

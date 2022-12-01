@@ -20,7 +20,7 @@ async function renameSym(editor) {
     Messages.showError(Catalog.msgNothingSelected);
     return;
   }
-  selectedPos = Position.toLsp(editor.document, selected.start);
+  selectedPos = Position.toLsp(editor.document, selected.start, true);
   if (!selectedPos) {
     Messages.showError(Catalog.msgUnableToResolveSelection);
     return;
