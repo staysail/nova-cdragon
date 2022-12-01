@@ -73,7 +73,7 @@ async function findReferences(editor, includeDeclaration = true) {
     }
 
     let current = nova.workspace.activeTextEditor?.document?.uri;
-
+    files = {};
     let waits = [];
     for (let res of result) {
       let name = res.uri;
