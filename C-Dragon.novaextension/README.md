@@ -21,6 +21,7 @@ superset and you can use this instead.
 - Symbols
 - Code Folding
 - Format File (per `.clang-format`), including On Save
+- Find References
 - Navigation, Jump to...
   - Definition
   - Declaration

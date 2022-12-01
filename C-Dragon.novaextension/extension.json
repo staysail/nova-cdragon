@@ -4,7 +4,13 @@
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
   "version": "0.9.10",
-  "categories": ["languages", "formatters", "completions", "issues"],
+  "categories": [
+    "languages",
+    "formatters",
+    "completions",
+    "issues",
+    "sidebars"
+  ],
   "license": "MIT",
   "repository": "https://github.com/staysail/nova-cdragon",
   "bugs": "https://github.com/staysail/nova-cdragon/issues",
