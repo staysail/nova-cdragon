@@ -3,7 +3,7 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "categories": [
     "languages",
     "formatters",

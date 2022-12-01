@@ -1,3 +1,9 @@
+# Version 0.9.11
+
+Clear references results (very minor bug) when starting a new search.
+
+Add some more information to the extension metadata and README.
+
 # Version 0.9.10
 
 Find References is now a supported menu option.
