@@ -11,6 +11,9 @@ a language server like _clangd_, and fast syntactic analysis thanks to [Tree-sit
 If you have installed our [C][4] extension, this extension is a complete
 superset and you can use this instead.
 
+This extension requires Nova 10.0 or better, and because of at least one fixed bug, we
+highly recommend updating to Nova 10.4 or better.
+
 ## ✨ Features ✨
 
 - C
@@ -79,10 +82,14 @@ are available on the clang site. (Formatting on save is disabled by default.)
 
 ### Compile Commands
 
-The extension will start when editing a C or C++ source file. In order to provide project-context specific information, your project will need to provide a `compile_commands.json` file.
-Tools like CMake, meson-build, and similar can generate one for you. More information can be found at https://clang.llvm.org/docs/JSONCompilationDatabase.html
+The extension will start when editing a C or C++ source file.
+In order to provide project-context specific information, your project will need to provide a `compile_commands.json` file.
+Tools like CMake, meson-build, and similar can generate one for you.
+More information can be found at https://clang.llvm.org/docs/JSONCompilationDatabase.html
 
-The directory where your `compile_commands.json` file is stored can be specified in global or project preferences, if it is not in the root of the project directory. (Note that _clangd_ will also search in a top-level directory called `build`, but _ccls_ will not.)
+The directory where your `compile_commands.json` file is stored can be specified in global or project preferences,
+if it is not in the root of the project directory.
+(Note that _clangd_ will also search in a top-level directory called `build`, but _ccls_ will not.)
 
 ## 🛡️ Security Considerations 🛡️
 
@@ -125,13 +132,6 @@ Staysail has published extensions for the former two.
 
 ## 🐜 Bugs 🐜
 
-- Symbol renames won't work if the selection starts in columns 0 or 1 and is less than
-  three characters long, or is located on the first two lines of the file.
-  This is a [defect][6] in Nova.
-  It will result in a message similar to:
-
-  > `failed to decode textDocument/prepareRename request: expected integer`
-
 - Symbol renames can mess up highlighting. Make a subsequent change to refresh the
   tree-sitter grammar's view of things. This appears to be a Nova defect.
 - _clangd_ (and probably _ccls_) has various limitations around symbol renaming. YMMV.
@@ -170,4 +170,3 @@ This work is based in part upon
 [3]: https://tree-sitter.github.io/tree-sitter/ "Tree-sitter web site"
 [4]: https://github.com/staysail/nova-c "Tree-sitter grammar for C"
 [5]: https://brew.sh "Homebrew package manager"
-[6]: https://devforum.nova.app/t/lsp-integers-0-and-1-serialized-to-boolean/1831
