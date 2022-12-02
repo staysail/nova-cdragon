@@ -86,9 +86,15 @@
           "syntaxes": ["c", "cpp", "objc"]
         }
       },
+      { "separator": true },
       {
         "title": "Preferences",
         "command": "cdragon.preferences",
+        "syntaxes": ["c", "cpp", "objc"]
+      },
+      {
+        "title": "Extension Preferences",
+        "command": "cdragon.extensionPreferences",
         "syntaxes": ["c", "cpp", "objc"]
       }
     ],

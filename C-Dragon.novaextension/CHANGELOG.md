@@ -2,6 +2,8 @@
 
 Format selection.
 
+Extension Preferences added to the editor context menu.
+
 # Version 0.9.11
 
 Clear references results (very minor bug) when starting a new search.
