@@ -1,3 +1,7 @@
+# Version 0.9.12
+
+Format selection.
+
 # Version 0.9.11
 
 Clear references results (very minor bug) when starting a new search.

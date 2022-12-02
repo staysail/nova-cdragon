@@ -3,7 +3,7 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "categories": [
     "languages",
     "formatters",
@@ -68,6 +68,13 @@
         "title": "Format File",
         "command": "cdragon.formatFile",
         "shortcut": "opt-shift-f",
+        "filters": {
+          "syntaxes": ["c", "cpp", "objc"]
+        }
+      },
+      {
+        "title": "Format Selection",
+        "command": "cdragon.formatSelection",
         "filters": {
           "syntaxes": ["c", "cpp", "objc"]
         }

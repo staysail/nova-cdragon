@@ -16,6 +16,7 @@ const keys = {
   jumpToDeclaration: "cdragon.jumpToDeclaration",
   jumpToImplementation: "cdragon.jumpToImplementation",
   formatFile: "cdragon.formatFile",
+  formatSelection: "cdragon.formatSelection",
   checkForUpdate: "cdragon.checkForUpdate",
   renameSymbol: "cdragon.renameSymbol",
   findReferences: "cdragon.findReferences",
