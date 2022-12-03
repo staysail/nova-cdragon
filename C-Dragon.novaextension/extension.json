@@ -5,6 +5,7 @@
   "description": "C, C++, and Objective-C support",
   "version": "0.9.12",
   "categories": [
+    "commands",
     "languages",
     "formatters",
     "completions",
@@ -55,6 +56,7 @@
           "syntaxes": ["c", "cpp", "objc"]
         }
       },
+      { "separator": true },
       {
         "title": "Find References",
         "command": "cdragon.findReferences",
@@ -69,7 +71,6 @@
           "syntaxes": ["c", "cpp", "objc"]
         }
       },
-
       { "separator": true },
       {
         "title": "Format File",
@@ -223,7 +224,15 @@
           "id": "cdragon.sidebar.symbols",
           "name": "Symbols",
           "placeholderText": "Results from \"Find Symbols\" appear here.",
-          "placeholderImage": "sblarge"
+          "placeholderImage": "sblarge",
+          "headerCommands": [
+            {
+              "title": "Find Symbol",
+              "command": "cdragon.findSymbols",
+              "tooltip": "Open the Find Symbol dialog",
+              "image": "search"
+            }
+          ]
         }
       ]
     }
