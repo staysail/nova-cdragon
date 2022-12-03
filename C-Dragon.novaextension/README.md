@@ -1,4 +1,4 @@
-# C-Dragon - C, C++, and Objective-C Extension
+# C-Dragon&trade; - C, C++, and Objective-C Extension
 
 ---
 
@@ -34,6 +34,7 @@ highly recommend updating to Nova 10.4 or better.
 - Signature Assistance
 - Code Quality Hints
 - Code Actions
+- Find Symbol
 - Rename Symbol
 
 ## 📸 Screenshots 📸
@@ -162,11 +163,28 @@ for anyone able to perform the actual translations.
 
 C-Dragon&trade; is a trademark of Staysail Systems, Inc.
 
-This work is based in part upon
-[Ben Beshara][1]'s original [C++ ClangD extension][2].
+Copyright &copy; 2022 Staysail Systems, Inc.
+
+This extension is made available under the terms of the [MIT License][8].
+
+The search icon was borrowed from [Cameron Little][6]'s excellent [TypeScript extension][7] for Nova.
+Additionally, some of the code used here was adapted from that
+extension, which is also licensed under the MIT license and carries the
+following copyright notice:
+
+> Copyright (c) 2020 Cameron Little
+
+This work started from [Ben Beshara][1]'s original [C++ ClangD extension][2].
+That extension carried the following license declaration in its manifest (which
+we have preserved):
+
+> "license": "MIT",
 
 [1]: https://benbeshara.id.au/ "Ben Beshara"
-[2]: https://example.com/clangd-nova-extension
+[2]: https://github.com/benbeshara/nova-cplusplus
 [3]: https://tree-sitter.github.io/tree-sitter/ "Tree-sitter web site"
 [4]: https://github.com/staysail/nova-c "Tree-sitter grammar for C"
 [5]: https://brew.sh "Homebrew package manager"
+[6]: https://github.com/apexskier "Cameron Little's GitHub page"
+[7]: https://github.com/apexskier/nova-typescript "TypeScript Extension for Nova"
+[8]: https://github.com/staysail/nova-cdragon/blob/main/LICENSE.md "MIT License"

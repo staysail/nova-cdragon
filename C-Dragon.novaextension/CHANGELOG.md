@@ -1,5 +1,8 @@
 # Version 0.9.12
 
+Find Symbol dialog. This adds another pane to the side bar,
+and lets you find symbols by a name or a portion of their name.
+
 Format selection.
 
 Extension Preferences added to the editor context menu.
