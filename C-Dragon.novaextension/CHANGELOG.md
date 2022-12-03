@@ -3,6 +3,14 @@
 Find Symbol dialog. This adds another pane to the side bar,
 and lets you find symbols by a name or a portion of their name.
 
+The Find References pane got a new quick search button, to make
+it faster to access if you have the pane open.
+
+Find References no longer opens duplicate documents. (Unfortunately
+we still have to make sure at least one editor window is opened for
+each text document, so that we can obtain the details. It would be nice
+if Nova gave us a better API to get this information directly.)
+
 Format selection.
 
 Extension Preferences added to the editor context menu.

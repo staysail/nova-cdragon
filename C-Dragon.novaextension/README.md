@@ -6,7 +6,9 @@
 a language server like _clangd_, and fast syntactic analysis thanks to [Tree-sitter][3].
 (Some limited support for Objective-C++ is also present.)
 
-> This extension is a _BETA_ release.
+> This extension is a _Release Candidate_ release.
+> Most things should be working reasonably well at this time.
+> Please report any problems you encounter.
 
 If you have installed our [C][4] extension, this extension is a complete
 superset and you can use this instead.
@@ -95,10 +97,10 @@ if it is not in the root of the project directory.
 ## 🛡️ Security Considerations 🛡️
 
 You may notice that this extension needs entitlements to access
-the network and to read and write local files. These are used
-solely to support updating the language server. No files outside
-of the extension's private area are accessed directly, and the
-only requests made are read-only unauthenticated requests to access
+the network and to read and write local files.
+These are used solely to support updating the language server.
+No files outside of the extension's private area are accessed directly.
+The only requests made are read-only unauthenticated requests to access
 the public release information and actually download the binary
 needed for _clangd_.
 
@@ -142,16 +144,16 @@ Staysail has published extensions for the former two.
 - Objective C++ support is quite primitive, and doesn't understand C++ yet.
   We need a decent Tree-sitter grammar for it.
 
-- Objective C preprocessor statements are not well highlighted, as well as things
-  inside such conditionals. This is due to the limitations of the Tree-sitter grammar we have
-  used; we'll probably need to fork that grammar to fix it.
+- Objective C preprocessor statements are not well highlighted, as well as things inside such conditionals.
+  This is due to the limitations of the Tree-sitter grammar we have used.
+  We'll probably need to fork that grammar to fix it.
 
-- Pointer declarations are not properly symbolicated. This is because of limitations in the
-  Tree-sitter grammar. We will probably need to fork the grammars to make pointer_declarations
-  a hidden node.
+- Pointer declarations are not properly symbolicated.
+  This is because of limitations in the Tree-sitter grammar.
+  We will probably need to fork the grammars to make pointer_declarations a hidden node.
 
-- Objective C symbolication is far from complete. We welcome bug reports and PRs from
-  folks who make use of Objective C.
+- Objective C symbolication is far from complete.
+  We welcome bug reports and PRs from folks who make use of Objective C.
 
 ## 🌐 Localizations 🌐
 
