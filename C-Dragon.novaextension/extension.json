@@ -62,6 +62,13 @@
           "syntaxes": ["c", "cpp", "objc"]
         }
       },
+      {
+        "title": "Find Symbol",
+        "command": "cdragon.findSymbols",
+        "filters": {
+          "syntaxes": ["c", "cpp", "objc"]
+        }
+      },
 
       { "separator": true },
       {
@@ -210,6 +217,12 @@
           "id": "cdragon.sidebar.references",
           "name": "References",
           "placeholderText": "Results from \"Find References\" appear here.",
+          "placeholderImage": "sblarge"
+        },
+        {
+          "id": "cdragon.sidebar.symbols",
+          "name": "Symbols",
+          "placeholderText": "Results from \"Find Symbols\" appear here.",
           "placeholderImage": "sblarge"
         }
       ]

@@ -21,6 +21,8 @@ const keys = {
   renameSymbol: "cdragon.renameSymbol",
   findReferences: "cdragon.findReferences",
   showReferences: "cdragon.showReferences",
+  findSymbols: "cdragon.findSymbols",
+  showSymbols: "cdragon.showSymbols",
 };
 
 module.exports = keys;

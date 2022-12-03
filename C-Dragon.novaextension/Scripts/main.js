@@ -9,6 +9,7 @@ const Lsp = require("./lsp.js");
 const Format = require("./format.js");
 const Navigate = require("./navigate.js");
 const References = require("./references.js");
+const Symbols = require("./symbols.js");
 const Rename = require("./rename.js");
 const Update = require("./update.js");
 const State = require("./state.js");
@@ -18,6 +19,7 @@ exports.activate = async function () {
   Format.register();
   Navigate.register();
   References.register();
+  Symbols.register();
   Rename.register();
   Lsp.register();
   Update.register();

@@ -34,11 +34,17 @@ const catalog = {
   msgInstall: "msgInstall",
   msgUpdate: "msgUpdate",
   msgCancel: "msgCancel",
+  msgSearch: "msgSearch",
+  msgRename: "msgRename",
   msgDownloadFailed: "msgDownloadFailed",
   msgLspIsNotAutoTitle: "msgLspIsNotAutoTitle",
   msgLspIsNotAutoBody: "msgLspIsNotAutoBody",
   msgReferencesFoundTitle: "msgReferencesFoundTitle",
   msgReferencesFoundBody: "msgReferencesFoundBody",
+  msgSymbolsFoundTitle: "msgSymbolsFoundTitle",
+  msgSymbolsFoundBody: "msgSymbolsFoundBody",
+  msgSymbolsSearch: "msgSymbolsSearch",
+  msgSymbol: "msgSymbol",
 };
 
 // default English strings
@@ -72,13 +78,20 @@ values[catalog.msgUpToDate] = "Language server is up to date.";
 values[catalog.msgInstall] = "Install";
 values[catalog.msgUpdate] = "Update";
 values[catalog.msgCancel] = "Cancel";
-values[catalog.msgLspIsNotAutoTitle] = "Language server not updateable";
+(values[catalog.msgSearch] = "Search"),
+  (values[catalog.msgRename] = "Rename"),
+  (values[catalog.msgLspIsNotAutoTitle] = "Language server not updateable");
 values[catalog.msgLspIsNotAutoBody] =
   "Automatic updates are only supported when using LLVM clangd.";
 values[catalog.msgDownloadFailed] = "Download of asset failed.";
 values[catalog.msgReferencesFoundTitle] = "Found _COUNT_ References";
 values[catalog.msgReferencesFoundBody] =
-  "Select the C-Dragon sidebar to see the results.";
+  "Check the References pane in the C-Dragon sidebar to see the results.";
+values[catalog.msgSymbolsFoundTitle] = "Found _COUNT_ Matches in _FILES_ Files";
+values[catalog.msgSymbolsFoundBody] =
+  "Check the Symbols pane in the C-Dragon sidebar to see the results.";
+values[catalog.msgSymbolsSearch] = "Search for symbol(s)";
+values[catalog.msgSymbol] = "Symbol";
 
 // verify that every entry in the catalog has a matching entry in values
 for (let name in catalog) {
