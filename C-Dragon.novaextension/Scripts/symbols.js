@@ -64,11 +64,16 @@ let symbolsTv = null;
 
 async function findSymbols(editor) {
   const search = await new Promise((resolve) => {
+    let sel = nova.workspace.activeTextEditor?.selectedText;
+    sel = sel.trim();
+    let m = sel.match(/^([A-Za-z_][A-Za-z0-9_]*)/);
+    sel = m?.length > 1 ? m[1] : "";
     nova.workspace.showInputPanel(
       Messages.getMsg(Catalog.msgSymbolsSearch),
       {
         label: Messages.getMsg(Catalog.msgSymbol),
         prompt: Messages.getMsg(Catalog.msgSearch),
+        value: sel,
       },
       resolve
     );
@@ -89,8 +94,6 @@ async function findSymbols(editor) {
       Messages.showNotice(Catalog.msgNothingFound, "");
       return;
     }
-
-    console.warn("RESULT IS", JSON.stringify(result));
 
     matches = {};
     files = [];
