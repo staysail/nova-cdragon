@@ -169,9 +169,9 @@ Copyright &copy; 2022 Staysail Systems, Inc.
 
 This extension is made available under the terms of the [MIT License][8].
 
-The search icon was borrowed from [Cameron Little][6]'s excellent [TypeScript extension][7] for Nova.
-Additionally, some of the code used here was adapted from that
-extension, which is also licensed under the MIT license and carries the
+Some of the code in this extension was adapted from [Cameron Little][6]'s
+excellent [TypeScript extension][7] for Nova.
+That extension is also licensed under the MIT license and carries the
 following copyright notice:
 
 > Copyright (c) 2020 Cameron Little
