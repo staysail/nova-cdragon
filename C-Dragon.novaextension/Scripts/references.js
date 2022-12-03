@@ -95,7 +95,9 @@ async function findReferences(editor, includeDeclaration = true) {
 
     // for efficiency's sake, we only resolve line details at the end
     let count = 0;
+    let nfiles = 0;
     for (let name in files) {
+      nfiles++;
       // sort by line number so that low number results appear first
       files[name] = files[name].sort(function (a, b) {
         if (a.range.start.line != b.range.start.line) {
@@ -114,24 +116,20 @@ async function findReferences(editor, includeDeclaration = true) {
           break;
         }
       }
-      count++;
       if (lines.length == 0) {
         continue;
       }
       for (let i in files[name]) {
+        count++;
         let ln = files[name][i].range.start.line;
         files[name][i].text = lines.length > ln ? lines[ln].trim() : "...";
       }
     }
 
     referencesTv.reload();
-    Messages.showNotice(
-      Messages.getMsg(Catalog.msgReferencesFoundTitle).replace(
-        "_COUNT_",
-        count
-      ),
-      Catalog.msgReferencesFoundBody
-    );
+    let title = Messages.getMsg(Catalog.msgReferencesFoundTitle);
+    title = title.replace("_COUNT_", count).replace("_FILES_", nfiles);
+    Messages.showNotice(title, Catalog.msgReferencesFoundBody);
   } catch (err) {
     files = {};
     Messages.showError(err.message ?? err);

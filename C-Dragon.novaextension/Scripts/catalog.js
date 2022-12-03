@@ -84,7 +84,8 @@ values[catalog.msgCancel] = "Cancel";
 values[catalog.msgLspIsNotAutoBody] =
   "Automatic updates are only supported when using LLVM clangd.";
 values[catalog.msgDownloadFailed] = "Download of asset failed.";
-values[catalog.msgReferencesFoundTitle] = "Found _COUNT_ References";
+values[catalog.msgReferencesFoundTitle] =
+  "Found _COUNT_ References in _FILES_ Files";
 values[catalog.msgReferencesFoundBody] =
   "Check the References pane in the C-Dragon sidebar to see the results.";
 values[catalog.msgSymbolsFoundTitle] = "Found _COUNT_ Matches in _FILES_ Files";
