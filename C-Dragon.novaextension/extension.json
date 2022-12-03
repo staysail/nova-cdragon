@@ -218,7 +218,15 @@
           "id": "cdragon.sidebar.references",
           "name": "References",
           "placeholderText": "Results from \"Find References\" appear here.",
-          "placeholderImage": "sblarge"
+          "placeholderImage": "sblarge",
+          "headerCommands": [
+            {
+              "title": "Find References",
+              "command": "cdragon.findReferences",
+              "tooltip": "Find references to the selected symbol",
+              "image": "search"
+            }
+          ]
         },
         {
           "id": "cdragon.sidebar.symbols",

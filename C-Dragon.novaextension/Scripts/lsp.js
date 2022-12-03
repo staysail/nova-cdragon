@@ -91,7 +91,7 @@ async function startClient() {
       server = "clangd";
       break;
     case flavorLLVM:
-      args = ["--compile-commands-dir=" + ccdir, "--log=verbose"];
+      args = ["--compile-commands-dir=" + ccdir];
       path = path ?? findClangd();
       server = "clangd";
       break;

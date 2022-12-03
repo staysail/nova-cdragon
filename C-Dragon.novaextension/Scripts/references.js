@@ -53,6 +53,13 @@ function referencesTreeProvider() {
 let referencesTv = null;
 
 async function findReferences(editor, includeDeclaration = true) {
+  if (!TextEditor.isTextEditor(editor)) {
+    editor = nova.workspace.activeTextEditor;
+  }
+  if (editor == null) {
+    Messages.showError(Catalog.msgNothingSelected);
+    return;
+  }
   try {
     let selected = editor.selectedRange;
     if (!selected) {
@@ -72,6 +79,11 @@ async function findReferences(editor, includeDeclaration = true) {
       return;
     }
 
+    let opened = {};
+    for (let doc of nova.workspace.textDocuments) {
+      opened[doc.uri] = true;
+    }
+
     let current = nova.workspace.activeTextEditor?.document?.uri;
     files = {};
     let waits = [];
@@ -85,7 +97,11 @@ async function findReferences(editor, includeDeclaration = true) {
         files[name] = [];
       }
       files[name].push(res);
-      waits.push(nova.workspace.openFile(res.uri));
+      // only open files if we have not already done so
+      if (!opened[res.uri]) {
+        opened[res.uri] = true;
+        waits.push(nova.workspace.openFile(res.uri));
+      }
     }
     await Promise.all(waits);
 
