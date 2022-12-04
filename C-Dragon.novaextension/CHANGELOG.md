@@ -1,3 +1,7 @@
+# Version Next
+
+Button fix for rename.
+
 # Version 0.9.12
 
 Find Symbol dialog. This adds another pane to the side bar,

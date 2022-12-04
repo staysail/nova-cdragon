@@ -78,9 +78,9 @@ values[catalog.msgUpToDate] = "Language server is up to date.";
 values[catalog.msgInstall] = "Install";
 values[catalog.msgUpdate] = "Update";
 values[catalog.msgCancel] = "Cancel";
-(values[catalog.msgSearch] = "Search"),
-  (values[catalog.msgRename] = "Rename"),
-  (values[catalog.msgLspIsNotAutoTitle] = "Language server not updateable");
+values[catalog.msgSearch] = "Search";
+values[catalog.msgRename] = "Rename";
+values[catalog.msgLspIsNotAutoTitle] = "Language server not updateable";
 values[catalog.msgLspIsNotAutoBody] =
   "Automatic updates are only supported when using LLVM clangd.";
 values[catalog.msgDownloadFailed] = "Download of asset failed.";
