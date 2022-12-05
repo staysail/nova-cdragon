@@ -1,6 +1,22 @@
-# Version Next
+# Version 1.0.1
+
+Forgot to push the release notes! ;-)
+
+# Version 1.0.0
+
+Finally, an "official" release! Essentially we believe that this
+extension works well enough and has achieved enough of our key release
+criteria to warrant being released.
 
 Button fix for rename.
+
+Numerous symbolication fixes. More of the symbols should be identified,
+and properly characterized. There are some extreme cases (for example
+when using more than 4 levels of pointer indirection) that might be missed.
+
+Objective-C support is still mostly a best effort case. It likely can
+use additional improvement, especially in the preprocessor handling, but
+it is also better than anything else available at the moment (for Nova).
 
 # Version 0.9.12
 

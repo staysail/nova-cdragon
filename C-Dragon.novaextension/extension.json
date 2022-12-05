@@ -3,7 +3,7 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "categories": [
     "commands",
     "languages",
