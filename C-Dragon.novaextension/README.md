@@ -6,10 +6,6 @@
 a language server like _clangd_, and fast syntactic analysis thanks to [Tree-sitter][3].
 (Some limited support for Objective-C++ is also present.)
 
-> This extension is a _Release Candidate_ release.
-> Most things should be working reasonably well at this time.
-> Please report any problems you encounter.
-
 If you have installed our [C][4] extension, this extension is a complete
 superset and you can use this instead.
 
@@ -18,26 +14,20 @@ highly recommend updating to Nova 10.4 or better.
 
 ## ✨ Features ✨
 
-- C
-- C++
-- Objective-C
+- C, C++, and Objective-C
 - Syntax Highlighting
 - Indentation (automatic, somewhat limited)
 - Symbols
 - Code Folding
-- Format File (per `.clang-format`), including On Save
+- Format Selection or File (per `.clang-format`), including On Save
+- Jump to Definition, Declaration, Implementation, Type Definition
 - Find References
-- Navigation, Jump to...
-  - Definition
-  - Declaration
-  - Implementation
-  - Type Definition
+- Find Symbol
+- Rename Symbol
 - Hover Tooltips
 - Signature Assistance
 - Code Quality Hints
 - Code Actions
-- Find Symbol
-- Rename Symbol
 
 ## 📸 Screenshots 📸
 
@@ -148,11 +138,8 @@ Staysail has published extensions for the former two.
   This is due to the limitations of the Tree-sitter grammar we have used.
   We'll probably need to fork that grammar to fix it.
 
-- Pointer declarations are not properly symbolicated.
-  This is because of limitations in the Tree-sitter grammar.
-  We will probably need to fork the grammars to make pointer_declarations a hidden node.
-
-- Objective C symbolication is far from complete.
+- Objective C symbolication is a best-effort.
+  It should be close, but since we don't use Objective C we can't be certain.
   We welcome bug reports and PRs from folks who make use of Objective C.
 
 ## 🌐 Localizations 🌐
