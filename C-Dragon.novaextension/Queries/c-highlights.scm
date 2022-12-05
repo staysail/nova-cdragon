@@ -86,8 +86,8 @@
 ((identifier) @value.boolean
 (#match? @value.boolean "(true|false)"))
 
-((identifier) @constant
- (#match? @constant "^[A-Z][A-Z\\d_]*$"))
+((identifier) @identifier.constant
+ (#match? @identifier.constant "^[A-Z][A-Z\\d_]*$"))
 
 (identifier) @identifier.variable
 

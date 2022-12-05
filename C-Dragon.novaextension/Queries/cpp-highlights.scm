@@ -156,8 +156,8 @@
 (statement_identifier) @identifier.constant
 (escape_sequence) @string.escape
 
-((identifier) @constant
- (#match? @constant "^[A-Z][A-Z\\d_]*$"))
+((identifier) @identifier.constant
+ (#match? @identifier.constant "^[A-Z][A-Z\\d_]*$"))
 
  ; workaround missing wchar_t in tree-sitter grammar
 ((type_identifier) @_wchar_t
