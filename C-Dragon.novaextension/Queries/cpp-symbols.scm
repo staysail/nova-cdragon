@@ -4,12 +4,19 @@
   ((function_declarator declarator: (_) @name))) @subtree
   (#set! role function-or-method)
 )
+
 ; (((function_definition declarator: (_) @name) @subtree) (#set! role function-or-method))
 
 ; you might be thinking... what? well, we need to pick out multiple pointer dereference types
 ; single pointer return
 ((function_definition
   (pointer_declarator (function_declarator declarator: (identifier) @name))
+ ) @subtree
+  (#set! role function)
+)
+; also reference returns
+((function_definition
+  (reference_declarator (function_declarator declarator: (identifier) @name))
  ) @subtree
   (#set! role function)
 )
@@ -61,6 +68,7 @@
 (((init_declarator declarator: (identifier) @name) @subtree (#set! role variable)))
 (((pointer_declarator declarator: (identifier) @name) @subtree (#set! role variable)))
 (((array_declarator declarator: (identifier) @name) @subtree (#set! role variable)))
+(((reference_declarator (identifier) @name) @subtree (#set! role variable)))
 (((_ declarator: (field_identifier) @name) @subtree (#set! role property)))
 
 ; preprocessor queries
