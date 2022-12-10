@@ -70,7 +70,7 @@ values[catalog.msgNewName] = "New name";
 values[catalog.msgCouldNotRenameSym] = "Could not rename symbol";
 values[catalog.msgNewLspTitle] = "Update Available";
 values[catalog.msgNewLspBody] =
-  "An new language server (clangd _VERSION_) update is available.";
+  "An new language server (clangd _VERSION_) update is available. (You have _OLD_VERSION_.)";
 values[catalog.msgMissingLspTitle] = "Server Missing";
 values[catalog.msgMissingLspBody] =
   "A language server is required for full functionality. Install clangd _VERSION_ now?";

@@ -46,11 +46,13 @@ async function checkForUpdate(force = false) {
     curr ? Catalog.msgNewLspTitle : Catalog.msgMissingLspTitle
   );
   let text = Messages.getMsg(
-    curr ? Catalog.msgNewBody : Catalog.msgMissingLspBody
+    curr ? Catalog.msgNewLspBody : Catalog.msgMissingLspBody
   );
   let n = new NotificationRequest("autoUpdate");
   n.title = title;
-  n.body = text.replace("_VERSION_", next);
+  n.body = text
+    .replace("_VERSION_", next)
+    .replace("_OLD_VERSION_", curr ?? "none");
   n.actions = [
     Messages.getMsg(curr ? Catalog.msgUpdate : Catalog.msgInstall),
     Messages.getMsg(Catalog.msgCancel),
