@@ -62,9 +62,9 @@ $(OBJC_DYLIB): $(OBJC_OBJS)
 	$(CODESIGN) -s - $@
 
 clean:
-	rm -f $(C_OBJS) $(CPP_OBJS)
+	rm -f $(C_OBJS) $(CPP_OBJS) $(OBJC_OBJS)
 
 clobber: clean
-	rm -f $(C_DYLIB) $(CPP_DYLIB)
+	rm -f $(C_DYLIB) $(CPP_DYLIB) $(OBJC_DYLIB)
 
 .PHONY: all install clean
