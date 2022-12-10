@@ -1,3 +1,8 @@
+# Version 1.0.2
+
+The update message was not displaying the new version of clangd
+that is available. While here, also display the user's current version.
+
 # Version 1.0.1
 
 Forgot to push the release notes! ;-)
