@@ -13,8 +13,6 @@ const State = require("./state.js");
 
 // internal navigate function
 async function jumpTo(editor, thing) {
-  console.log(`Jumping to ${thing}`);
-
   try {
     const selected = editor.selectedRange;
     if (!selected) {
@@ -28,7 +26,7 @@ async function jumpTo(editor, thing) {
     });
     await chooseLocation(response);
   } catch (err) {
-    Messages.showError(err.message);
+    Messages.showError(err.message ?? err);
   }
 }
 
