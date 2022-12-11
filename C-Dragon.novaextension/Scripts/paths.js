@@ -16,7 +16,7 @@ function findProgram(paths, progs) {
 }
 
 function expandPath() {
-  return nova.environment("PATH").split(":");
+  return nova.environment["PATH"].split(":");
 }
 
 const Paths = {
