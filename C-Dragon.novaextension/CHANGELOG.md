@@ -4,6 +4,8 @@ Format on save was not working properly, especially for objective C.
 
 Fix for finding clangd or CCLS when using the custom installation.
 
+Several other minor errors (probably unnoticed by users) corrected.
+
 # Version 1.0.2
 
 The update message was not displaying the new version of clangd
