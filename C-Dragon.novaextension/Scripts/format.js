@@ -70,7 +70,11 @@ async function formatSelection(editor) {
 }
 
 function formatOnSave(editor) {
-  if (editor.document.syntax != "c" && editor.document.syntax != "cpp") {
+  if (
+    editor.document.syntax != "c" &&
+    editor.document.syntax != "cpp" &&
+    editor.document.syntax != "objc"
+  ) {
     return;
   }
   if (Prefs.getConfig(Config.lspFlavor == "none")) {
@@ -88,7 +92,11 @@ function register() {
 
   State.disposal.add(
     nova.workspace.onDidAddTextEditor((editor) => {
-      if (editor.document.syntax == "d") {
+      if (
+        editor.document.syntax == "c" ||
+        editor.document.syntax == "cpp" ||
+        editor.document.syntax == "objc"
+      ) {
         State.disposal.add(editor.onWillSave((editor) => formatOnSave(editor)));
       }
     })
