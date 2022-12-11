@@ -154,10 +154,10 @@ C-Dragon&trade; is a trademark of Staysail Systems, Inc.
 
 Copyright &copy; 2022 Staysail Systems, Inc.
 
-This extension is made available under the terms of the [MIT License][8].
+This extension is made available under the terms of the [MIT License][7].
 
-Some of the code in this extension was adapted from [Cameron Little][6]'s
-excellent [TypeScript extension][7] for Nova.
+Some of the code in this extension was adapted from [Cameron Little][5]'s
+excellent [TypeScript extension][6] for Nova.
 That extension is also licensed under the MIT license and carries the
 following copyright notice:
 
@@ -172,8 +172,7 @@ we have preserved):
 [1]: https://benbeshara.id.au/ "Ben Beshara"
 [2]: https://github.com/benbeshara/nova-cplusplus
 [3]: https://tree-sitter.github.io/tree-sitter/ "Tree-sitter web site"
-[4]: https://github.com/staysail/nova-c "Tree-sitter grammar for C"
-[5]: https://brew.sh "Homebrew package manager"
-[6]: https://github.com/apexskier "Cameron Little's GitHub page"
-[7]: https://github.com/apexskier/nova-typescript "TypeScript Extension for Nova"
-[8]: https://github.com/staysail/nova-cdragon/blob/main/LICENSE.md "MIT License"
+[4]: https://github.com/staysail/nova-c "C support for Nova"
+[5]: https://github.com/apexskier "Cameron Little's GitHub page"
+[6]: https://github.com/apexskier/nova-typescript "TypeScript Extension for Nova"
+[7]: https://github.com/staysail/nova-cdragon/blob/main/LICENSE.md "MIT License"
