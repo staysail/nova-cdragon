@@ -1,3 +1,9 @@
+# Version 1.0.3
+
+Format on save was not working properly, especially for objective C.
+
+Fix for finding clangd or CCLS when using the custom installation.
+
 # Version 1.0.2
 
 The update message was not displaying the new version of clangd
