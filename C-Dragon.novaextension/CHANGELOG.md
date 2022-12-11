@@ -1,6 +1,6 @@
 # Version 1.0.3
 
-Format on save was not working properly, especially for objective C.
+Format on save was not working.
 
 Fix for finding clangd or CCLS when using the custom installation.
 

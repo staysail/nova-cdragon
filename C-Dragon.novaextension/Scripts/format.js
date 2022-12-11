@@ -77,11 +77,11 @@ function formatOnSave(editor) {
   ) {
     return;
   }
-  if (Prefs.getConfig(Config.lspFlavor == "none")) {
+  if (Prefs.getConfig(Config.lspFlavor) == "none") {
     return;
   }
-  const formatOnSave = Prefs.getConfig(Config.formatOnSave);
-  if (formatOnSave) {
+  const fmt = Prefs.getConfig(Config.formatOnSave);
+  if (fmt) {
     return formatFile(editor);
   }
 }

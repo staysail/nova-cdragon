@@ -12,7 +12,7 @@ const keys = {
   lspPath: "cdragon.lsp.path",
   compileCommandsDir: "cdragon.compileCommandsDir",
 
-  formatOnSave: "cdragon.fmt.onSave",
+  formatOnSave: "cdragon.format.onSave",
   checkForUpdates: "cdragon.checkForUpdates",
 
   // context keys that don't get written out
