@@ -138,7 +138,7 @@ async function startClient() {
         "Language encountered error:",
         error.message || "unknown exit"
       );
-      Messages.showNotice(Catalog.msgLspStoppedErr, error.message);
+      Messages.showNotice(Catalog.msgLspStoppedErr, error.message ?? error);
     }
   });
 
@@ -146,7 +146,7 @@ async function startClient() {
     // Start the client
     lspClient.start();
   } catch (err) {
-    Messages.showNotice(Catalog.msgLspDidNotStart, err.message);
+    Messages.showNotice(Catalog.msgLspDidNotStart, err.message ?? err);
     return false;
   }
 
