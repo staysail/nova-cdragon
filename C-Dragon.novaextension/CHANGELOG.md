@@ -1,3 +1,7 @@
+# Version 1.0.4
+
+Improved automatic indentation.
+
 # Version 1.0.3
 
 Format on save was not working.
