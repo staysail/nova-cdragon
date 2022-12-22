@@ -30,7 +30,7 @@ function stopClient() {
 
 function findClangd() {
   let paths = Paths.findProgram(
-    ["/usr/local/bin", "/opt/homebrew/bin", "/usr/bin"],
+    ["/usr/local/bin", "/opt/homebrew/bin", "/opt/local/bin", "/usr/bin"],
     ["clangd"]
   );
   if (paths.length > 0) {
@@ -41,7 +41,7 @@ function findClangd() {
 
 function findCcls() {
   let paths = Paths.findProgram(
-    ["/usr/local/bin", "/opt/homebrew/bin", "/usr/bin"],
+    ["/usr/local/bin", "/opt/homebrew/bin", "/opt/local/bin", "/usr/bin"],
     ["ccls"]
   );
   if (paths.length > 0) {
