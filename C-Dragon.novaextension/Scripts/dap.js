@@ -38,13 +38,11 @@ async function resolveTaskAction(context) {
     action.debugArgs = {};
 
     if ((config?.get("cdragon.dap.mode") ?? "local") == "remote") {
-      console.warn("TRYING TO USE REMOTE");
       action.transport = "socket";
       action.adapterStart = "attach";
       action.socketHost = config?.get("cdragon.dap.host") ?? "127.0.0.1";
       action.socketPort = config?.get("cdragon.dap.port") ?? 34567;
     } else {
-      console.warn("TRYING TO USE LOCAL");
       action.adapterStart = "lanch";
       action.command = dapPath;
       action.args = [];
@@ -69,12 +67,16 @@ async function resolveTaskAction(context) {
       }
     }
 
-    debugArgs.cwd = config?.get("cdragon.dap.cwd") ?? data.cwd ?? "";
-    debugArgs.sourceMap = [];
     debugArgs.program = config?.get("cdragon.dap.program") ?? "";
-    for (item of config?.get("cdragon.dap.pathMappings") ?? []) {
-      let m = item.split(":", 1);
-      debugArgs.sourceMap.push([m[0], item.slice(m[0].length)]);
+    debugArgs.cwd = config?.get("cdragon.dap.cwd") ?? data.cwd ?? "";
+
+    let pm = config?.get("cdragon.pathMappings");
+    if (pm && pm.length > 0) {
+      debugArgs.sourceMap = [];
+      for (item of config?.get("cdragon.dap.pathMappings") ?? []) {
+        let m = item.split(":", 1);
+        debugArgs.sourceMap.push([m[0], item.slice(m[0].length)]);
+      }
     }
     debugArgs.stopOnEntry = !!config?.get("cdragon.dap.stopOnEntry");
     debugArgs.initCommands = config?.get("cdragon.dap.initCommands") ?? [];

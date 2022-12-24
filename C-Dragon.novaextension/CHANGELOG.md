@@ -1,3 +1,7 @@
+# Version 1.1.1
+
+Fix minor error when source map is empty.
+
 # Version 1.1.0
 
 Initial debugging support via `lldb-vscode` using custom tasks.

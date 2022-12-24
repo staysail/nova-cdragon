@@ -1,0 +1,7 @@
+{
+  "extension" : {
+    "identifier" : "tech.staysail.ClangD",
+    "name" : "C-Dragon"
+  },
+  "extensionTemplate" : "localDebug"
+}
