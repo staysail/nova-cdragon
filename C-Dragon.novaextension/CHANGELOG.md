@@ -1,3 +1,15 @@
+# Version 1.1.0
+
+Initial debugging support via `lldb-vscode` using custom tasks.
+This is quite preliminary, and requires manually creating a debug task
+as we aren't processing build rules yet. Additionally the debug adapter
+must be supplied externally (`lldb-vscode`). This does work with homebrew
+installed LLVM (in, for example, `/opt/homebrew/Cellar/llvm/15.0.6/bin`).
+
+# Version 1.0.5
+
+Find `clangd` `in MacPorts if installed there.
+
 # Version 1.0.4
 
 Improved automatic indentation.
@@ -6,7 +18,7 @@ Improved automatic indentation.
 
 Format on save was not working.
 
-Fix for finding clangd or CCLS when using the custom installation.
+Fix for finding `clangd` or CCLS when using the custom installation.
 
 Several other minor errors (probably unnoticed by users) corrected.
 

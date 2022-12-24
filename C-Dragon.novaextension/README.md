@@ -28,6 +28,7 @@ highly recommend updating to Nova 10.4 or better.
 - Signature Assistance
 - Code Quality Hints
 - Code Actions
+- Experimental Debugger via `lldb-vscode`
 
 ## 📸 Screenshots 📸
 
@@ -35,6 +36,7 @@ highly recommend updating to Nova 10.4 or better.
 ![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot2.png)
 ![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot3.png)
 ![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot4.png)
+![](https://raw.githubusercontent.com/staysail/nova-cdragon/main/screenshot5.png)
 
 ## ⚙️ Language Server Integration ⚙️
 
@@ -84,6 +86,18 @@ The directory where your `compile_commands.json` file is stored can be specified
 if it is not in the root of the project directory.
 (Note that _clangd_ will also search in a top-level directory called `build`, but _ccls_ will not.)
 
+## 🐞 Debugging Support (Experimental 🥽) 🐞
+
+Initial support for debugging tasks, is available, but requires `lldb-vscode` to be installed.
+This is available as part of the `llvm` homebrew recipe, but will be installed in a Cellar.
+Configure the path to `lldb-vscode` in the Extension Settings. Debug tasks can be created in
+the **Tasks** area of the **Project Settings**.
+
+This will make use of _LLDB_ under the hood, and offers source level debugging support.
+
+Future updates should make this more automatic, and we will investigate providing an
+automatic download of the debug adapter itself.
+
 ## 🛡️ Security Considerations 🛡️
 
 You may notice that this extension needs entitlements to access
@@ -115,7 +129,11 @@ We would like to add localizations, but we don't know any other languages confid
 
 Tighter integration with build tools (like CMake or Meson) is something we plan to add.
 
-Debugging adapters for lldb or gdb is hoped for as well.
+The debug support can be improved to better support automatic detection of likely
+targets, as well as automatic management of the debug adapter as we do for _clangd_.
+It would be nice to support remote debugging via DAP, but it looks like `lldb-vscode` does not
+support it at present. (As a workaround, you can create a wrapper script, that runs it
+remotely via SSH.)
 
 ## Other Recommended Extensions
 

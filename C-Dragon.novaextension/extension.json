@@ -3,7 +3,7 @@
   "name": "C-Dragon",
   "organization": "Staysail Systems",
   "description": "C, C++, and Objective-C support",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "categories": [
     "commands",
     "languages",
@@ -180,6 +180,31 @@
           "default": false
         }
       ]
+    },
+    {
+      "title": "Debugger",
+      "type": "section",
+      "children": [
+        {
+          "key": "cdragon.dap.flavor",
+          "title": "Debugger to use",
+          "description": "Which debugger to use",
+          "type": "enum",
+          "values": [
+            ["custom", "Custom"],
+            ["none", "None"]
+          ],
+          "radio": false,
+          "default": "custom"
+        },
+        {
+          "key": "cdragon.dap.path",
+          "title": "Debug Adapter Path",
+          "description": "Path to a custom debug adapter server (lldb-vscode)",
+          "type": "path",
+          "placeholder": "/usr/local/bin/lldb-vscode"
+        }
+      ]
     }
   ],
 
@@ -243,6 +268,107 @@
           ]
         }
       ]
+    }
+  ],
+
+  "taskTemplates": {
+    "localDebug": {
+      "name": "C, C++, Obj-C Debug",
+      "description": "Launch and debug a program",
+      "tasks": {
+        "run": {
+          "resolve": "lldb",
+          "data": { "type": "launch" }
+        }
+      },
+      "config": [
+        {
+          "key": "cdragon.dap.program",
+          "title": "Program",
+          "description": "Path to executable to debug.",
+          "type": "path",
+          "allowFolders": false,
+          "allowFiles": true,
+          "relative": true
+        },
+        {
+          "key": "cdragon.dap.args",
+          "title": "Arguments",
+          "description": "Commmand line arguments for debugged program.",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.env",
+          "title": "Environment",
+          "description": "Environment variables for debugged program (name=var).",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.cwd",
+          "title": "Current Working Directory",
+          "description": "Current working directory for debug target.",
+          "type": "path",
+          "allowFiles": false,
+          "allowFolders": true
+        },
+        {
+          "key": "cdragon.dap.pathMappings",
+          "title": "Path Mappings",
+          "description": "Mappings between local and remote paths.  Entries formatted as 'local:remote'",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.debugRoot",
+          "title": "Working directory for debugger",
+          "description": "Working directory to run debugger, can assist with path name resolution",
+          "type": "path",
+          "allowFiles": false,
+          "allowFolders": true,
+          "relative": true
+        },
+        {
+          "key": "cdragon.dap.stopOnEntry",
+          "title": "Stop On Entry",
+          "description": "Stop immediately in debugger after launch",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "key": "cdragon.dap.initCommands",
+          "title": "Init Commands",
+          "description": "LLDB commands run prior to target creation",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.preRunCommands",
+          "title": "Pre-Run Commands",
+          "description": "LLDB commands run prior to starting target",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.stopCommands",
+          "title": "Stop Commands",
+          "description": "LLDB commands run when stopping in debugger",
+          "type": "stringArray"
+        },
+        {
+          "key": "cdragon.dap.exitCommands",
+          "title": "Exit Commands",
+          "description": "LLDB commands run when program exits",
+          "type": "stringArray"
+        }
+      ]
+    }
+  },
+  "breakpoints": [
+    {
+      "syntax": "c"
+    },
+    {
+      "syntax": "cpp"
+    },
+    {
+      "syntax": "objc"
     }
   ],
 

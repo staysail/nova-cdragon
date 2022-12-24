@@ -10,6 +10,8 @@
 const keys = {
   lspFlavor: "cdragon.lsp.flavor",
   lspPath: "cdragon.lsp.path",
+  dapFlavor: "cdragon.dap.flavor", // only custom for now
+  dapPath: "cdragon.dap.path",
   compileCommandsDir: "cdragon.compileCommandsDir",
 
   formatOnSave: "cdragon.format.onSave",
